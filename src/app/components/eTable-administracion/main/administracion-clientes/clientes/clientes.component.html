@@ -1,0 +1,84 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-1 mr-1" (click)="nuevo()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Nuevo
+    </button>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="img" class="loading" src="{{loading}}" /></div>
+<div class="mt-3 table-responsive">
+
+    <div class="f-13 ml-3" *ngIf="sinClientes"><span>No hay clientes</span></div>
+    <table *ngIf="!sinClientes" class="table table-hover">
+        <caption style="display: none;">Detalles de clientes</caption>
+        <thead class="header-table">
+            <tr>
+                <td style="width: 100px;"></td>
+                <th id="dni">
+                    <div class="center-head">DNI</div>
+                </th>
+                <th id="apellidos">
+                    <div class="center-head">Apellidos</div>
+                </th>
+                <th id="nombres">
+                    <div class="center-head">Nombres</div>
+                </th>
+                <th id="email">
+                    <div class="center-head">Email</div>
+                </th>
+                <th id="celular">
+                    <div class="center-head">Celular</div>
+                </th>
+                <th id="cumpleaños">
+                    <div class="center-head">Cumpleaños</div>
+                </th>
+                <th id="estado">
+                    <div class="center-head">Estado</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="header-body">
+            <tr *ngFor="let cliente of clientes">
+                <td>
+                    <div class="row" style="width: 130px;">
+                        <button class="btn-edit mt-1 ml-3 " (click)="editCliente(cliente.ccliente)">
+                            <em class="mdi mdi-border-color"
+                                style="font-size: 20px; display: inline-block !important;"></em>
+                        </button>
+
+                        <button type="button" class="btn-edit mt-1 ml-2" (click)="deleteCliente(cliente.ccliente)">
+                            <em class="mdi mdi-delete  " style="font-size: 20px; display: inline-block !important;"></em>
+                        </button>
+
+                    </div>
+
+
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.dni}}</div>
+
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.usapellidos}}</div>
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.usnombre}}</div>
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.email}}</div>
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.phone}}</div>
+                </td>
+                <td>
+                    <div class="center-body">{{cliente.date}}</div>
+                </td>
+                <td>
+                    <div>
+                        <button [ngClass]="cliente.estado ? 'btn-habilitado' : 'btn-deshabilitado'">
+                            {{cliente.estado ? 'Habilitado' : 'Deshabilitado'}}
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

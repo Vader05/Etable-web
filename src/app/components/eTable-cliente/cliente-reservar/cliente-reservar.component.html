@@ -1,0 +1,70 @@
+
+<div class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        
+        <form class="needs-validation ml-1 " novalidate >
+          <div class="form-row">
+            <div class="col-md-3 mb-3 mr-3 ml-5">
+                 <div class="label label-secondary label-outlined"><h5> <strong>Fecha</strong>  </h5></div>
+            </div>
+
+            <div class="col-md-2 mb-3 mr-3">
+              <div class="label label-secondary label-outlined"><h5> <strong>Hora</strong>  </h5></div>
+   
+            </div>
+
+            <div class="col-md-2 mb-3 mr-3">
+              <div class="label label-secondary label-outlined"><h5> <strong>N° Personas </strong>  </h5></div>
+            
+            </div>
+           
+            <div class="col-md-2 mb-3 mr-3" >
+             
+            </div>
+         
+          </div>
+        
+        </form> 
+
+
+          <form class="needs-validation ml-1 " novalidate >
+            <div class="form-row">
+              <div class="col-md-3 mb-3 mr-3 ml-5">
+                <input  id= "fecha" class="form-control" [(ngModel)]="reservacion.fecha" name ="fecha" type="date" name="date" min="2019-12-16">
+              </div>
+
+              <div class="col-md-2 mb-3 mr-3">
+                <input  [(ngModel)]="reservacion.hora" name ="hora" min="08:00" max="20:00"  type="time"  class="form-control input-m">
+              </div>
+
+              <div class="col-md-2 mb-3 mr-3">
+                <input  [(ngModel)]="reservacion.cantidad" name ="cantidad"
+              class="form-control input-small " min="1" max="40" type="number" />
+              </div>
+             
+              <div class="col-md-2 mb-3 mr-3" >
+                <button class="btn btn-primary" (click)="register()" type="submit" style="float: left;" >Reservar</button>
+              </div>
+           
+            </div>
+            <div class="form-row">
+                
+                <textarea class="col-md-9 mb-3 mt-4 ml-4" rows="5"  id="comment" 
+                [(ngModel)]="reservacion.comentario" name ="comentario"  placeholder="Ingrese un comentario aqui -OPCIONAL-"></textarea>
+              </div>
+         
+         
+          </form> 
+         
+
+
+
+    
+    </div>
+    </div>
+  </div>
+
+
+
+      

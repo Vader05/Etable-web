@@ -1,0 +1,29 @@
+<div class="text-center mb-3">
+    <span style="font-weight: bold;" class="f-16 border p-2"><span class="mdi mdi-account" style="color: #821625; padding-top: 7px!important; font-size: 22px; display: inline-block !important;"></span>  Bienvenid@, {{user.nickname}}</span>
+</div>
+<button *ngIf="sistema" (click)="show(1)" class="list-group-item btn-item"><span class="mdi mdi-office-building" style="color: white; padding: 7px!important; font-size: 20px; display: inline-block !important;"></span> Administración del Sistema</button>
+<div *ngIf="admsis" class="ele">
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" mat-list-item (click)="setTitle(1)" [routerLink]="['sistema/general']">Sistema General</button>
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" mat-list-item (click)="setTitle(2)" [routerLink]="['sistema/configuracion']">Configuración</button>
+</div>
+
+<button *ngIf="usuarios" (click)="show(2)" class="list-group-item btn-item"><span class="mdi mdi-account-group" style="color: white; padding: 7px!important; font-size: 20px; display: inline-block !important;"></span> Administración de Usuarios</button>
+<div *ngIf="admus" class="ele">
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(5)" mat-list-item [routerLink]="['usuarios/permisos']">Permisos</button>
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(3)" mat-list-item [routerLink]="['usuarios/tipos']">Tipos de Usuario</button>
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(4)" mat-list-item [routerLink]="['usuarios/list']">Usuarios</button>
+</div>
+<button *ngIf="mesas" (click)="show(3)" class="list-group-item btn-item"><span class="mdi mdi-table" style="color: white; padding: 7px!important; font-size: 20px; display: inline-block !important;"></span> Administración de Mesas</button>
+<div *ngIf="admme" class="ele">
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(6)" mat-list-item [routerLink]="['mesas/list']">Mesas</button>
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(7)" mat-list-item [routerLink]="['mesas/perfiles']">Perfil de Mesa</button>
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(8)" mat-list-item [routerLink]="['mesas/programacion']">Programación de Mesas</button>
+</div>
+<button *ngIf="clientes" (click)="show(4)" class="list-group-item btn-item"><span class="mdi mdi-account-search" style="color: white; padding: 7px!important; font-size: 20px; display: inline-block !important;"></span> Administración de Clientes</button>
+<div *ngIf="admcl" class="ele">
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(9)" mat-list-item [routerLink]="['clientes/list']">Clientes</button>
+</div>
+<button *ngIf="dashboard" (click)="show(5)" class="list-group-item btn-item"><span class="mdi mdi-tablet-dashboard" style="color: white; padding: 7px!important; font-size: 20px; display: inline-block !important;"></span> Dashboard</button>
+<div *ngIf="admda" class="ele">
+    <button class="list-group-item btn-light subitem" style="font-weight: bold;" (click)="setTitle(12)" mat-list-item [routerLink]="['dashboard/reservaciones']">Reservaciones</button>
+</div>

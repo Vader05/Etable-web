@@ -1,0 +1,66 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-1 mr-1" [disabled]="true">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Permisos de los diferentes módulos del Sistema
+    </button>
+    <span *ngIf="editSuccess" class="ml-3 action-success">
+        <em class="mdi mdi-check-circle mr-1"></em>
+        {{successText}} <br/></span>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<div class="ml-4 mt-2">
+    <span class="f-13"><strong>Módulo del Sistema:</strong></span>
+    <select class="form-control form-control-sm select-sm mt-1" [(ngModel)]="selectedItemId"
+        (change)="getModuloMenuSubItems()">
+        <option [ngValue]="0">Seleccionar módulo</option>
+        <option *ngFor="let item of items" [ngValue]="item.citem">{{item.item}}</option>
+    </select>
+</div>
+<div class="mt-1 mt-3" *ngIf="moduloSelected">
+    <div *ngFor="let subitem of subitems; let i = index">
+        <span class="ml-4 f-13">{{i+1}}. {{subitem.subitem}}</span>
+        <div *ngIf="permisosLoad">
+            <div>
+                <div class="mt-2 mb-4 card card-table">
+                    <table class="table-hover">
+                        <caption style="display: none;">tabla</caption>
+                        <thead class="header-table card-header">
+                            <tr>
+                                <td></td>
+                                <th id="permiso">
+                                    <div class="center-head">Permiso</div>
+                                </th>
+                                <th id="descripcion">
+                                    <div class="center-head">Descripción</div>
+                                </th>
+                                <th id="estado">
+                                    <div class="center-head">Estado</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="header-body">
+                            <tr *ngFor="let permiso of permisos[i]">
+                                <td style="width: 50px;">
+                                    <button class="btn-edit mt-1 ml-2" (click)="editarPermiso(permiso.cpermiso, subitem.citem)">
+                                        <em class="mdi mdi-border-color" style="font-size: 20px;"></em>
+                                    </button>
+                                </td>
+                                <td style="width: 250px;">
+                                    <div class="center-body">{{permiso.permiso}}</div>
+                                </td>
+                                <td style="width: 450px;">
+                                    <div class="center-body">{{permiso.descripcion}}</div>
+                                </td>
+                                <td>
+                                    <div class="center-body" *ngIf="permiso.estado" >
+                                        <button [disabled]="true" class="btn-habilitado">Habilitado</button></div>
+                                    <div class="center-body" *ngIf="!permiso.estado">
+                                        <button [disabled]="true" class="btn-deshabilitado">Deshabilitado</button></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

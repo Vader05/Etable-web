@@ -1,0 +1,38 @@
+.input-small{
+    width: 70px;
+}
+.input-m{
+    width: 90px;
+}
+
+.btn-dias-selected{
+    background-color: rgb(7, 71, 166);
+    border: none;
+    padding: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 70px;
+}
+
+.btn-dias-selected:hover{
+    background-color: rgb(6, 53, 124);
+}
+
+.btn-dias-no-selected{
+    background-color: rgb(141, 139, 139);
+    border: none;
+    padding: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 70px;
+}
+
+.btn-dias-no-selected:hover{
+    background-color: rgb(155, 150, 150);
+}

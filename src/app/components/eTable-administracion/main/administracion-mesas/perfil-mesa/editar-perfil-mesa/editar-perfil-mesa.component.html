@@ -1,0 +1,58 @@
+<div class="header-user-list mb-2">
+    <button type="button" class="btn-nuevo ml-1 mr-1" (click)="eliminar()">
+                <em class="mdi mdi-delete f-16"></em> Eliminar
+    </button>
+    <button class="btn-nuevo ml-1 mr-1" (click)="guardar()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Guardar
+    </button>
+    <button type="button" class="btn-nuevo ml-1 mr-1" (click)=" cancelar()">
+        <em class="mdi mdi-close-circle f-16"></em> Cancelar
+    </button>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<span *ngIf="empty" class="not-complete">
+        {{successText}} <br /></span>
+
+<div class="ml-3 f-13 mt-2">
+    <table>
+        <caption style="display: none;">tabla</caption>
+        <tbody>
+            <tr>
+                <th id="nombre">
+                    <span class="mr-2">Nombre:</span>
+                </th>
+                <td>
+                    <input name="tiponombre" [(ngModel)]="perfilMesa.pmnombre"
+                        class="mb-2 form-control input-small form-control-sm" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <th id="descripcion">
+                    <span class="mr-2">Descripcion:</span>
+                </th>
+                <td>
+                    <input input name="tipodescripcion" [(ngModel)]="perfilMesa.pmdescripcion"
+                        class="mb-2 form-control form-control-sm input-large" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <th id="capacidad">
+                    <span class="mr-2">Capacidad de Mesa:</span>
+                </th>
+                <td>
+                    <input input name="tipocapacidad" [(ngModel)]="perfilMesa.pmcapacidad"
+                        class="mb-2 form-control form-control-sm input-large" type="number" />
+                </td>
+            </tr>
+            <tr>
+                <th id="mesa">
+                    <span class="mr-2">Mesa Compuesta:</span>
+                </th>
+                <td>
+                   <button  style="width: 200px;"[ngClass]=" this.pmcompuesta ? 'btn-habilitado' : 'btn-deshabilitado'" (click)="cambiarEstado()">{{this.pmcompuesta ? 'Compuesta' : 'No Compuesta'}}</button>
+    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,268 @@
+.header-user-list{
+    background-color: rgb(244,245, 247); color: white;
+    font-size: 18px;
+    height: 40px;
+    align-items: center;
+    padding: 5px;
+}
+
+.header-table{
+    font-size: 13px;
+}
+
+.header-body{
+    font-size: 13px;
+}
+
+
+.btn-nuevo{
+    background: #3f3250;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    height: 100%;
+    border: none;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+
+.btn-edit{
+    background: rgb(244,245, 247);
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    padding-top: 5px;
+}
+
+.btn-edit:hover{
+    background: silver;
+}
+
+.btn-delete{
+    background: rgb(252, 64, 74);
+    height: 100%;
+    border: none;
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+}
+
+.btn-delete:hover{
+    background: rgb(252, 64, 74);
+}
+.btn-nuevo:hover{
+    background: #821625;
+}
+
+.btn-habilitado{
+    background-color: #821625;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+.btn-load{
+    background-color: rgb(22, 35, 54);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-habilitado:hover{
+    background-color: #3f3250;
+}
+
+.btn-deshabilitado{
+    background-color: rgb(202, 202, 202);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+.btn-deshabilitado:hover{
+    background-color: rgb(160, 160, 160);
+}
+
+.btn-disabled{
+    background-color: rgb(211, 212, 214);
+    color: black;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 95px; 
+}
+
+.btn-disabled:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.center-body{
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+}
+
+.center-head{
+    border-radius: 8px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.f-16{
+    font-size: 16px;
+}
+
+.f-13{
+    font-size: 13px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .sidenav-container {
+
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    flex: 1 0 auto;
+  }
+  
+  .header-login{
+    background-color: #821625; color: white;
+    font-size: 14px;
+    height: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.f-20{
+  font-size: 20px;
+}
+
+.text-header{
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left; 
+}
+
+.f-left{
+    height: 100%; display:flex; align-items: center;
+    float: left;
+}
+
+.f-bottom{
+    float: bottom;
+}
+.f-right{
+    height: 100%; display:flex; align-items: center;
+    float: right;
+}
+
+.btn-asignar {
+    border: 0px;
+    color: white;
+    height: 100%;
+    padding: 5px;
+    background-color: rgb(13, 76, 172);
+}
+
+.btn-asignar:hover{
+    background-color: rgb(14, 82, 185);
+}
+
+.btn-sidenav{
+  background: transparent;
+  border: 0px;
+  color: white;
+}
+
+.btn-close{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 13.5px;
+    color: white;
+    border: 0px;
+    height: 100%;
+    background-color: #E14658;
+    text-decoration: none!important;
+    border-radius: 5px;
+}
+
+.btn-active-m{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 13.5px;
+    color: white;
+    border: 0px;
+    height: 100%;
+    background-color: rgb(37, 97, 187);
+}
+
+.btn-active-m:hover{
+    background-color: rgb(14, 82, 185);
+}
+.subline{
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+}
+
+.btn-close:hover{
+    background-color: #3f3250;
+}
+
+.div-loading{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+.loading{
+    width: 35px;
+    height: 35px;
+}
+
+.action-success{
+    font-size: 13px;
+    color: green;
+}
+
+.not-complete{
+    margin-left: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #cc0000;
+    font-size: 13px;
+    color: #cc0000;
+}

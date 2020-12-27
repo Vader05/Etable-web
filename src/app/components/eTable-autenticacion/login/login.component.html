@@ -1,0 +1,193 @@
+<div class="clientecontainer">
+    <div class="clienteslider">
+      <div class="clienteslide slide1">
+        
+            <div class="caption">
+                <h2>¡Llegaste al lugar correcto! Restaurante Brisas del Mar</h2>
+                <p>Disfruta de los mejores platos marinos con la impresionante vista al mar de las hermosas playas de Lima.</p>
+                
+            </div>
+            <img class="logo" src="../../../../assets/cliente/logo_oficial.png" alt="logo">
+          
+      </div>
+      <div class="clienteslide slide2">
+        
+            <div class="caption">
+                <h2>¡Los mejores platos marinos!</h2>
+                <p>Tenemos la más amplia y variada carta de toda Lima con los mejores platos y bebidas que te arrepentiras si no los pruebas.</p>
+            </div>
+            <img class="logo" src="../../../../assets/cliente/logo_oficial.png" alt="logo">
+         
+      </div>
+      <div class="clienteslide slide3">
+        
+            <div class="caption">
+                <h2>¡Los mejores mariscos!</h2>
+                <p>Contamos con los mejores proveedores de mariscos y otros animales marinos frescos del día para que tu experiencia sea única. </p>
+            </div>
+            <img class="logo" src="../../../../assets/cliente/logo_oficial.png" alt="logo">
+            
+          
+      </div>
+      <div class="clienteslide slide4">
+        
+            <div class="caption">
+                <h2>¡Ven con tu familia!</h2>
+                <p>El vínculo que te une a tu verdadera familia no es el de la sangre, sino el del respeto y la alegría que tú sientes por las vidas de ellos y ellos por la tuya. Y para nosotros tu ya eres parte de nuestra familia así que ven y disfruta con nosotros.</p>
+            </div>
+            <img class="logo" src="../../../../assets/cliente/logo_oficial.png" alt="logo">
+          
+      </div>
+      <div class="clienteslide slide1">
+      
+            <div class="caption">
+                <h2>¡Llegaste al lugar correcto!  Restaurante Brisas del Mar</h2>
+                <p>Disfruta de los mejores platos marinos con la impresionante vista al mar de las hermosas playas de Lima.</p>
+            </div>
+            <img class="logo" src="../../../../assets/cliente/logo_oficial.png" alt="logo">
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="boxdoctores">
+    
+
+    <div class="boxdocs">
+       
+        <h1>Nuestros mejores platos</h1>
+        <ul>
+            <li class="doctor">
+                
+                    <img src="../../../../assets/cliente/plato7.png" alt="plato1">
+                    <p>Ceviche especial</p>
+                
+            </li>
+            <li class="doctor">
+                
+                    <img src="../../../../assets/cliente/plato8.png" alt="plato2">
+                    <p>Choritos a la chalaca</p>
+               
+            </li>
+            <li class="doctor">
+                <div class="doc">
+                    <img src="../../../../assets/cliente/plato9.png" alt="plato3">
+                    <p>Ceviche de pescado</p>
+                </div>
+            </li>
+            <li class="doctor">
+                <div class="doc">
+                    <img src="../../../../assets/cliente/plato10.png" alt="plato4">
+                    <p>Makis</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+<div class="divacceder"><a class="acceder" href="#">Ver más</a></div>
+
+
+<div *ngIf="!registration" class="hola">
+    <div class="container">
+
+
+        <div class="text-center p-2 f-13 mb-3">
+            <span style="font-size: 12px;" class="btn-nuevo p-2">eTable - Sistema de Reservación de mesas</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-1 col-2"></div>
+            <div class="col-lg-4 col-md-6 col-sm-10 col-8">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div style="text-align: center;">
+                            
+                            <img class="logo" src="../../../../assets/cliente/logo.png" alt="logo">
+                        </div>
+    
+                        <div class="mt-3 text-center">
+                            <div class="mb-4">
+                                <h4><strong style="color: black;">{{config.empnombre}}</strong></h4>
+                            </div>
+                            <div class="not-user" *ngIf="!serverConected">
+                                <span id="notuser">No está conectado el servidor</span>
+                                <button class="btn-close" (click)="closeSpan()">
+                                    <em class="mdi mdi-close-circle-outline"></em>
+                                </button>
+                            </div>
+                            <div class="not-user" *ngIf="notuser">
+                                <span id="notuser">{{notUserEmpty}}</span>
+                                <button class="btn-close" (click)="closeSpan()">
+                                    <em class="mdi mdi-close-circle-outline"></em>
+                                </button>
+                            </div>
+                            <div class="not-user" *ngIf="notpass">
+                                <span id="notpass">{{notPassEmpty}}</span>
+                                <button class="btn-close" (click)="closeSpan()">
+                                    <em class="mdi mdi-close-circle-outline"></em>
+                                </button>
+                            </div>
+                            <div class="not-user" *ngIf="notuserexist">
+                                <span id="notuserexist">{{notUserExist}}</span>
+                                <button class="btn-close" (click)="closeSpan()">
+                                    <em class="mdi mdi-close-circle-outline"></em>
+                                </button>
+                            </div>
+                        </div>
+                        <form class="form-group m-0" novalidate>
+                            <div class="mt-3">
+                                <label style="margin: 0px; padding: 0px; font-size: 22px; font-weight: bold; color: black;">
+                                    <em class="mdi mdi-account f-22"></em> Usuario
+                                </label>
+                                <input [(ngModel)]="user.nickname" class="form-control" type="text" name="user">
+                            </div>
+    
+                            <div class="mt-2">
+                                <label style="margin: 0px; padding: 0px; font-size: 22px; font-weight: bold; color: black;">
+                                    <em class="mdi mdi-key f-22"></em> Contraseña
+                                </label>
+                                <input [(ngModel)]="user.password" class="form-control" type="password" name="password" autocomplete="off">
+                            </div>
+                            <button [disabled]="load" (click)="login()" type="submit" class="btn-login mt-3" style="font-weight: bold;">Ingresar</button>
+                        </form>
+                        <div>
+                            <button [disabled]="load" class="btn btn-recuperar" style="font-weight: bold;">Recuperar contraseña</button>
+                            <button [disabled]="load" (click)="register()" class="btn-register" style="font-weight: bold;">Crear una cuenta</button>
+                            <div *ngIf="load" class="div-loading"><img alt="loading" class="loading" src="{{loading}}" /></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-1 col-2">
+    
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="contenedor clearfix">
+            <div class="footer-info">
+              <h3>MIS<span>IÓN</span></h3>
+              <p style="font-size: 15px;">Satisfacer las necesidades gastronómicas de nuestros clientes, ofreciendo alimentos y servicios con la más alta calidad, donde se sobrepasen las expectativas de nuestros clientes y ser un espacio de trabajo que permita la realización personal y el Desarrollo de sus colaboradores en el grupo.</p>
+            </div>
+            <div class="ultimos-tweets">
+              <h3>VIS<span>IÓN</span></h3>
+              <p style="font-size: 15px;">Ser reconocidos como el mejor restaurante de comida marina a nivel nacional, por los altos estándares de calidad en el servicio, innovación en el mercado y creando experiencias agradables al paladar de nuestros clientes.</p>
+            </div>
+            <div class="menu">
+              <h3>Redes<span>Sociales</span></h3>
+              <nav class="redes-sociales">
+                <span class="mdi mdi-facebook" style="color: white; padding: 7px!important; font-size: 30px; display: inline-block !important;"></span>
+                <span class="mdi mdi-instagram" style="color: white; padding: 7px!important; font-size: 30px; display: inline-block !important;"></span>
+                <span class="mdi mdi-youtube" style="color: white; padding: 7px!important; font-size: 30px; display: inline-block !important;"></span>
+                <span class="mdi mdi-twitter" style="color: white; padding: 7px!important; font-size: 30px; display: inline-block !important;"></span>
+              </nav>
+            </div>
+          </div>
+          <p class="copyright" >Todos los derechos Reservados. - BRISAS DEL MAR 2020</p>
+
+    </footer>
+</div>
+
+<app-register *ngIf="registration"></app-register>

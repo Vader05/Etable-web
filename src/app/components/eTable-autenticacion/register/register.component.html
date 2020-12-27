@@ -1,0 +1,116 @@
+<div class="hola">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-1 col-2">
+                <button (click)="backLogin()" class="btn-light btn">
+                    <em class="mdi mdi-arrow-left mr-1" style="color: black;"></em>Login</button>
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-10 col-8">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="row mb-2">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                <div style="text-align: center;">
+                                    <img alt="loading" class="logo" src="../../../../assets/cliente/logo.png" alt="logo" style="width: 150px; padding-top: 20px;">
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                <div class="mt-2">
+                                    <div class="mb-4">
+                                        <h4><strong style="color: black;">{{empnombre}}</strong></h4>
+                                        <h6 style="color: black;">Crear una cuenta</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form-group m-0" novalidate>
+                            <span *ngIf="empty" class="not-complete">
+                                {{successText}} <br /></span>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="mt-3">
+                                        <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                            Apellidos:
+                                        </label>
+                                        <input [(ngModel)]="user.usapellidos" class="form-control" type="text"
+                                            name="usapellidos">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="mt-3">
+                                        <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                            Nombres:
+                                        </label>
+                                        <input [(ngModel)]="user.usnombres" class="form-control" type="text"
+                                            name="usnombres">
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="mt-3">
+                                <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                    Correo electrónico:
+                                </label>
+                                <input [(ngModel)]="cliente.email" class="form-control" type="text" name="email">
+                            </div>
+    
+    
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="mt-3">
+                                        <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                            DNI:
+                                        </label>
+                                        <input [(ngModel)]="cliente.dni" class="form-control" type="number" name="dni">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="mt-3">
+                                        <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                            Celular:
+                                        </label>
+                                        <input [(ngModel)]="cliente.phone" class="form-control" type="text" name="phone">
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="mt-3">
+                                <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                    Fecha Nac.:
+                                </label>
+                                <input [(ngModel)]="cliente.date" class="form-control style-date" type="date" name="date">
+                            </div>
+    
+    
+                            <div class="mt-3">
+                                <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                    Usuario:
+                                </label>
+                                <input [(ngModel)]="user.nickname" class="form-control" type="text" name="user">
+                            </div>
+    
+                            <div class="mt-3">
+                                <label style="margin: 0px; padding: 0px; font-size: 14px; color: #000;">
+                                    Contraseña:
+                                </label>
+                                <input [(ngModel)]="user.password" class="form-control" type="password" name="password">
+                            </div>
+                            <button (click)="register()" type="button" style="font-weight: bold;" class="btn-login mt-3 mb-3">Registrarme</button>
+                        </form>
+                        <div>
+                            <div *ngIf="load" class="div-loading"><img alt="loading" class="loading" src="{{loading}}" /></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-1 col-2">
+    
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-2 mr-1" (click)="(edit ? editar() : guardarCambios())">
+        <em [ngClass]="(edit ? 'mdi-pencil' : 'mdi-plus-box-multiple-outline')" class="mdi f-16"></em> {{btn}}
+    </button>
+    <span *ngIf="success" class="ml-3 action-success">
+        <em class="mdi mdi-check-circle mr-1"></em>
+        {{successText}} <br/></span>
+    <button *ngIf="!edit" class="btn-nuevo ml-1 mr-1" (click)="cancelar()">
+        <em class="mdi mdi-close-circle f-16"></em> Cancelar
+    </button>
+</div>
+<div *ngIf="empty" class="mt-3"><span class="not-complete">{{emptyText}}</span></div>
+<div *ngIf="load || saving" class="div-loading" style="position:absolute"><img class="loading" alt="loading" src="{{loading}}" />
+</div>
+<div class="ml-4 mt-3 f-13">
+    <span><strong>Configuración General</strong></span>
+    <hr class="mt-1" />
+    <div class="table-responsive">
+        <table class="mb-4">
+            <caption style="display: none;">tabla</caption>
+            <tbody>
+                <tr>
+                    <th id="cantidad">
+                        <span class="mr-2">Cantidad máxima de registro de mesas:</span>
+                    </th>
+                    <td>
+                        <input [disabled]="edit" [(ngModel)]="configuracion.cant_max_mesas" name="cant_max_mesas"
+                            class="mb-2 form-control input-small form-control-sm" min="5" max="200" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <th id="usuarios">
+                        <span class="mr-2">Cantidad máxima de usuarios registrados:</span>
+                    </th>
+                    <td>
+                        <input [disabled]="edit" input [(ngModel)]="configuracion.cant_max_us_registrados"
+                            name="cant_max_us_registrados" class="mb-2 form-control form-control-sm input-small" min="1"
+                            max="99999" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <th id="trabajadores">
+                        <span class="mr-2">Máximo de usuarios trabajadores conectados:</span>
+                    </th>
+                    <td>
+                        <input [disabled]="edit" [(ngModel)]="configuracion.max_us_trab_conectados"
+                            name="max_us_trab_conectados" class="mb-2 form-control form-control-sm input-small" min="1"
+                            max="10" type="number" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <span><strong>Horario de atención del Restaurante:</strong></span>
+        <hr class="mt-1" />
+        <div class="table-responsive">
+            <table> 
+                <caption style="display: none;">/caption> tabla</caption>
+                <tbody>
+                    <tr>
+                        <th id="dias">
+                            <span class="mr-2">Días:</span>
+                        </th>
+                        <td>
+                            <button [disabled]="edit" (click) = "activarDia(dia.id)"
+                                [ngClass]="dia.activo ? 'btn-dias-selected': 'btn-dias-no-selected'"
+                                *ngFor="let dia of dias; let i = index"
+                                class="mb-2">{{dia.dia}}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="hora de inicio">Hora de Inicio:</th>
+                        <td>
+                            <input [disabled]="edit" min="08:00" max="20:00"
+                                [ngModel]="configuracion.horario_ini_atencion" type="time"
+                                class="mb-2 form-control form-control-sm input-m">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="horadefin">Hora de Fin:</th>
+                        <td>
+                            <input [disabled]="edit" min="08:00" max="20:00"
+                                [ngModel]="configuracion.horario_fin_atencion" type="time"
+                                class="mb-2 form-control form-control-sm input-m">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

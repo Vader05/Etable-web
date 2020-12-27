@@ -1,0 +1,66 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-1 mr-1" (click)="nuevoPerfil()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Nuevo
+    </button>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<div class="mt-3 table-responsive">
+       
+
+    <table class="table table-hover">
+        <caption style="display: none;">Tabla</caption>
+        <thead class="header-table">
+            <tr>
+                <td style="width: 100px;"></td>
+                <th id="nombre">
+                    <div class="center-head">Nombre del Perfil</div>
+                </th>
+                <th id="descripcion">
+                    <div class="center-head">Descripción</div>
+                </th>
+                <th id="capacidad">
+                    <div class="center-head">Capacidad</div>
+                </th>
+                <th id="compuesta">
+                    <div class="center-head">Compuesta</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="header-body">
+            <tr *ngFor= "let perfil of perfiles">
+                <td >
+                    <div class="row">
+                            <button class="btn-edit mt-1 ml-3 "(click)="editarPerfilMesa(perfil.cperfilmesa)">
+                                    <em class="mdi mdi-border-color" style="font-size: 20px; display: inline-block !important;"></em>
+                                </button>
+                               
+                                <button type="button" class="btn-edit mt-1 ml-2" (click)="eliminarPerfilMesa(perfil.cperfilmesa)">
+                                        <em class="mdi mdi-delete  " style="font-size: 20px; display: inline-block !important;"></em> 
+                                </button>
+
+                    </div>
+                    
+
+                </td>
+                <td>
+                        <div class="center-body"><button (click)="editarPerfilMesa(perfil.cperfilmesa)" class="btn-none">{{perfil.pmnombre}}</button></div>
+                        
+                </td>
+                <td>
+                    <div class="center-body">{{perfil.pmdescripcion}}</div>
+                </td>
+                <td>
+                    <div class="center-body" *ngIf="perfil.pmcapacidad===1">{{perfil.pmcapacidad}} persona</div>
+                    <div class="center-body" *ngIf="perfil.pmcapacidad>1">{{perfil.pmcapacidad}} personas</div>
+                </td>
+                <td>
+                    <div>
+                        <button [ngClass] = "perfil.pmcompuesta ? 'btn-componer' : 'btn-no-componer'">
+                         {{perfil.pmcompuesta ? 'Se puede componer' : 'No se puede componer'}}
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

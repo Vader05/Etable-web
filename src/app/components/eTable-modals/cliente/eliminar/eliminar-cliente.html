@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <div>
+    <span>
+      <em class="mdi mdi-alert-circle-outline"></em> Eliminar Cliente
+    </span>
+  </div>
+  <hr />
+  <div>
+    <span>¿Desea eliminar este cliente?</span>
+  </div>
+  <hr/>
+  <div class="mb-2 row">
+    <div class="col-lg-6 col-sm-6">
+      <button class="btn-nuevo btn-block" (click)="delete()" [mat-dialog-close]="true" cdkFocusInitial>Si</button>
+    </div>
+    <div class="col-lg-6 col-sm-6">
+      <button class="btn-habilitado btn-block" [mat-dialog-close]="true" cdkFocusInitial>No</button>
+    </div>
+    
+  </div>
+</mat-dialog-content>

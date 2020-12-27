@@ -1,0 +1,11 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-1 mr-1">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Nuevo
+    </button>
+</div>
+<div *ngIf="mesas?.length == 0">
+    <span>No hay mesas disponibles</span>
+</div>
+<div *ngFor="let mesa of mesas">
+{{mesa.nombremesa}}
+</div>

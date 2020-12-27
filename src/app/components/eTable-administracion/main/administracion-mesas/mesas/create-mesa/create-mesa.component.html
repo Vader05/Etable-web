@@ -1,0 +1,49 @@
+<div class="header-user-list mb-2">
+    <button class="btn-nuevo ml-1 mr-1" (click)="crearMesa()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Crear Mesa
+    </button>
+    <button type="button" class="btn-nuevo ml-1 mr-1" (click)=" cancelar()">
+        <em class="mdi mdi-close-circle f-16"></em> Cancelar
+    </button>
+</div>
+
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<span *ngIf="empty" class="not-complete">
+    {{successText}} <br /></span>
+<div class="ml-4 mr-4 mt-3 f-13">
+
+    <hr class="mt-1" />
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span><strong>Nombre de Mesa</strong> </span>
+            <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="mesa.nombremesa" name="apellidos">
+        </div>
+
+    </div>
+    <span><strong>Perfil de Mesa</strong></span>
+    <hr class="mt-1" />
+    <div class="row mt-2 mb-3">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <select class="form-control form-control-sm" [(ngModel)]="selectedTypeIdPerfil">
+                <option [ngValue]="0">Seleccionar perfil de mesa</option>
+                <option [ngValue]="perfil.cperfilmesa" *ngFor="let perfil of perfilmesa">{{perfil.pmnombre}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <span><strong>Estado de Mesa</strong></span>
+    <hr class="mt-1" />
+    <div class="row mt-2 mb-3">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <select class="form-control form-control-sm" [(ngModel)]="selectedTypeIdEstado">
+                <option [ngValue]="0">Seleccionar un estado de mesa</option>
+                <option [ngValue]="estado.cestadomesa" *ngFor="let estado of estadomesa">{{estado.emdescripcion}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+
+
+</div>

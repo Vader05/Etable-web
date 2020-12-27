@@ -1,0 +1,34 @@
+.btn-item{
+    background-color: #821625; color: white;
+    margin-bottom: 2px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    
+    
+  }
+
+  .subitem{
+    font-size: 14px;
+  }
+
+  .btn-item:hover{
+    background-color: #3f3250;
+    
+    
+  }
+  .ele {
+  animation: 0.5s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}

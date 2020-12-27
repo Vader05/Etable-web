@@ -1,0 +1,81 @@
+.card-permiso{
+    height: 370px;
+    overflow-y: auto;
+}
+
+.header-modulo{
+    background-color: rgb(244,245, 247);
+    color: black;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    text-align: left;
+    width: 100%; 
+}
+
+.btn-permiso{
+    border: 0px;
+    color: black;
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgb(243, 240, 240);
+    text-align: left;
+}
+
+.btn-permiso:hover{
+    background: rgb(233, 231, 231);
+}
+
+.btn-permiso-asignado {
+    background-color: rgb(7, 71, 166);
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-bottom: 3px;
+    text-align: left;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.btn-permiso-asignado:hover {
+    cursor: pointer;
+    background-color: rgb(63, 63, 63);
+}
+
+.btn-remover-all {
+    margin-right: -15px;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    border: none;
+    padding: 4px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+    text-align: left;
+    align-items: center;
+    align-content: center;
+}
+
+.btn-remover-all:hover{
+    background-color: rgb(102, 102, 102);
+}
+
+.btn-remove-permiso{
+    background-color: transparent;
+    color:white;
+    border: 0px;
+    font-size: 20px;
+}
+
+.btn-remove-permiso:hover {
+    color: rgb(184, 184, 184);
+}
+
+.input-large{
+    width: 400px;
+}
+
+.input-small{
+    width: 180px;
+}

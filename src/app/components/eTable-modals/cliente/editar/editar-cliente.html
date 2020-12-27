@@ -1,0 +1,91 @@
+<mat-dialog-content>
+  <div>
+    <span>
+      <em class="mdi mdi-alert-circle-outline"></em> Editar Cliente
+    </span>
+  </div>
+  <hr />
+  <div class="ml-4 mr-4 mt-3 f-13">
+    <span><strong>Datos personales</strong></span>
+    <hr class="mt-1" />
+    <div class="row">
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <span>Apellidos</span>
+        <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.usapellidos" name="apellidos">
+      </div>
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <span>Nombres</span>
+        <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.usnombre" name="nombres">
+      </div>
+    </div>
+    <div>
+      <div class="row mt-2">
+        <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+          <span>Correo electrónico</span>
+          <input type="email" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.email" name="email">
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+          <span>Celular</span>
+          <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.phone" name="phone">
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+          <span>Fecha de nacimiento</span>
+          <input type="date" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.date" name="date">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+          <span>DNI</span>
+          <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.dni" name="dni">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ml-4 mr-4 mt-3 f-13">
+    <span><strong>Datos de usuario</strong></span>
+    <hr class="mt-1" />
+    <div class="row">
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <span>Usuario</span>
+        <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.nickname" name="nickname">
+      </div>
+    </div>
+    <div class="row mt-2 mb-2">
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <span>Contraseña</span>
+        <input type="password" [disabled]="!changePassword" class="form-control form-control-sm mt-1"
+          [(ngModel)]="cliente.password" name="password">
+      </div>
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <span>Confirmar contraseña</span>
+        <input type="password" [disabled]="!changePassword" class="form-control form-control-sm mt-1"
+          [(ngModel)]="passw">
+        <div class="mt-3">
+          <span class="alert alert-warning" *ngIf="passDiferente">
+            <em class="mdi mdi-alert mr-1"></em>Las contraseñas no coinciden</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-4 col-sm-4 col-6">
+        <button class="btn-habilitado" (click)="newPassword()">Nueva contraseña</button>
+      </div>
+    </div>
+    <span><strong>Estado del usuario</strong></span>
+    <hr class="mt-1" />
+    <div class="f-13">
+      <span class="mr-2">Estado actual: </span>
+      <button [ngClass]="cliente.estado ? 'btn-habilitado' : 'btn-deshabilitado'"
+        (click)="cambiarEstado()">{{cliente.estado ? 'Habilitado' : 'Deshabilitado'}}</button>
+    </div>
+  </div>
+  <hr />
+  <div class="mb-2 row">
+    <div class="col-lg-6 col-sm-6">
+      <button class="btn-nuevo btn-block" (click)="edit()" [mat-dialog-close]="true" cdkFocusInitial>Si</button>
+    </div>
+    <div class="col-lg-6 col-sm-6">
+      <button class="btn-habilitado btn-block" [mat-dialog-close]="true" cdkFocusInitial>No</button>
+    </div>
+
+  </div>
+</mat-dialog-content>

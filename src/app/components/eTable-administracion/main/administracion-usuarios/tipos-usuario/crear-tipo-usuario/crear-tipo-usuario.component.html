@@ -1,0 +1,106 @@
+<form novalidate>
+    <div class="header-user-list">
+        <button *ngIf="onEdit" type="button" class="btn-nuevo ml-1 mr-1" (click)="eliminar()">
+            <em class="mdi mdi-delete f-16"></em> Eliminar
+        </button>
+        <button (click)="(onEdit ? actualizar() : crear())" type="button" class="btn-nuevo ml-1 mr-1">
+            <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Guardar
+        </button>
+        <button  type="button" class="btn-nuevo ml-1 mr-1" (click)="cancelar()">
+            <em class="mdi mdi-close-circle f-16"></em> Cancelar
+        </button>
+    </div>
+    <div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+
+    <div class="ml-3 f-13 mt-2">
+        <table>
+            <caption style="display: none;">tabla</caption>
+            <tbody>
+                <tr>
+                    <th id="nombre">
+                        <span class="mr-2">Nombre:</span>
+                    </th>
+                    <td>
+                        <input name="tiponombre" [(ngModel)]="tipousuario.tiponombre"
+                            class="mb-2 form-control input-small form-control-sm" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th id="descripcion">
+                        <span class="mr-2">Descripcion:</span>
+                    </th>
+                    <td>
+                        <input input name="tipodescripcion" [(ngModel)]="tipousuario.tipodescripcion"
+                            class="mb-2 form-control form-control-sm input-large" type="text" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<div *ngIf="empty" class="mt-3 f-13"><span class="not-complete">{{emptyText}}</span></div>
+<div class="mt-3 ml-3 f-13">
+    <span><strong>Asignar permisos</strong></span>
+    <hr class="mt-1" />
+    <div class="row m-0 mb-5">
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <span class="card-header">Permisos del Sistema <button *ngIf="!allPermisos" class="btn-permiso" (click)="asignarTodo()"><strong>Asignar todo</strong></button></span>
+                <div class="card-body card-permiso">
+                    <select class="form-control form-control-sm select-sm" [(ngModel)]="selectedItemId"
+                        (change)="getModuloMenuSubItems()">
+                        <option [ngValue]="0">Seleccionar módulo</option>
+                        <option *ngFor="let item of items" [ngValue]="item.citem">{{item.item}}</option>
+                    </select>
+                    <div class="mt-1 mt-3" *ngIf="moduloSelected && permisosLoad">
+                        <div *ngFor="let subitem of subitems; let i = index;" class="card">
+                            <div class="header-modulo">
+                                <button class="mr-1 btn-nuevo">
+                                    <em class="mdi mdi-plus-box-outline"></em> {{subitem.subitem}}
+                                </button>
+                            </div>
+                            <div class="mt-2 mb-4 ml-3">
+                                <table>
+                                    <caption style="display: none;">tabla</caption>
+                                    <tbody>
+                                        <tr *ngFor="let permiso of permisos[i]; let j = index">
+                                            <th id="permiso">
+                                                <button *ngIf="!permiso.selected" (click)="agregarPermiso(i, permiso)"
+                                                    class="btn-permiso mr-1 btn-block">
+                                                    <em class="mdi mdi-plus-box-outline"></em>
+                                                    {{permiso.permiso}}</button>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <div class="row m-0 card-header">
+                    <div class="col-lg-6 col-sm-6 col-6 f-left">
+                        <span>Permisos asignados</span>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-6">
+                        <button class="btn-remover-all f-right" (click)="removerPermisos()">
+                            <em class="mdi mdi-delete f-16"></em> Remover todos</button>
+                    </div>
+                </div>
+                <div class="card-body card-permiso">
+                    <div class="btn-permiso-asignado row" title="Eliminar" (click)="removerPermiso(permiso)" *ngFor="let permiso of permisosAsignados">
+                        <button class="btn-remove-permiso"><em
+                                class="mdi mdi-delete"></em></button>
+                        <div>{{permiso.permiso}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

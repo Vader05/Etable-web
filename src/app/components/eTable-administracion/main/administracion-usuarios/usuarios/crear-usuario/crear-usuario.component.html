@@ -1,0 +1,87 @@
+<div class="header-user-list mb-2">
+    <button class="btn-nuevo ml-1 mr-1" (click)="guardar()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Crear Usuario
+    </button>
+    <button type="button" class="btn-nuevo ml-1 mr-1" (click)=" cancelar()">
+        <em class="mdi mdi-close-circle f-16"></em> Cancelar
+    </button>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<span *ngIf="empty" class="not-complete">
+    {{successText}} <br /></span>
+<div class="ml-4 mr-4 mt-3 f-13">
+
+    <span><strong>Tipo de usuario</strong></span>
+    <hr class="mt-1" />
+    <div class="row mt-2 mb-3">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <select class="form-control form-control-sm" [(ngModel)]="selectedTypeId" (change)="selectedTipoUsuario()">
+                <option [ngValue]="0">Seleccionar tipo de usuario</option>
+                <option [ngValue]="tipos.ctipousuario" *ngFor="let tipos of tiposUsuario">{{tipos.tiponombre}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <span><strong>Datos personales</strong></span>
+    <hr class="mt-1" />
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span>Apellidos</span>
+            <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="user.usapellidos"
+                name="apellidos">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span>Nombres</span>
+            <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="user.usnombres" name="nombres">
+        </div>
+    </div>
+    <div *ngIf="esCliente">
+        <div class="row mt-2">
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                <span>Correo electrónico</span>
+                <input type="email" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.email" name="email">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                <span>Celular</span>
+                <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.phone" name="phone">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                <span>Fecha de nacimiento</span>
+                <input type="date" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.date" name="date">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                <span>DNI</span>
+                <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="cliente.dni" name="dni">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ml-4 mr-4 mt-3 f-13">
+    <span><strong>Datos de usuario</strong></span>
+    <hr class="mt-1" />
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span>Usuario</span>
+            <input type="text" class="form-control form-control-sm mt-1" [(ngModel)]="user.nickname" name="nickname">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span>Contraseña</span>
+            <input type="password" class="form-control form-control-sm mt-1" [(ngModel)]="user.password"
+                name="password">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <span>Confirmar contraseña</span>
+            <input type="password" class="form-control form-control-sm mt-1" [(ngModel)]="passw">
+            <div class="mt-3">
+                <span class="alert alert-warning" *ngIf="passDiferente">
+                    <em class="mdi mdi-alert mr-1"></em>Contraseñas no son iguales</span>
+            </div>
+        </div>
+    </div>
+
+</div>

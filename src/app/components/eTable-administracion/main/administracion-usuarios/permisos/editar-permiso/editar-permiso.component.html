@@ -1,0 +1,50 @@
+<div class="header-user-list">
+    <button class="btn-nuevo ml-1 mr-1" (click)="guardar()">
+        <em class="mdi mdi-plus-box-multiple-outline f-16"></em> Guardar
+    </button>
+    <button  class="btn-nuevo ml-1 mr-1" (click)="cancelar()">
+        <em class="mdi mdi-close-circle f-16"></em> Cancelar
+    </button>
+</div>
+<div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+<div class="ml-4 mt-3 f-13">
+    <span>{{permiso.permiso}}</span>
+    <hr class="mt-1" />
+    <div class="table-responsive">
+        <table class="mb-4">
+            <caption style="display: none;">tabla</caption>
+            <tbody>
+                <tr>
+                    <th id="nombre">
+                        <span class="mr-2">Nombre:</span>
+                    </th>
+                    <td>
+                        <input [(ngModel)]="permiso.permiso" name="permiso"
+                            class="mb-2 form-control name-small form-control-sm" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th id="descripcion">
+                        <span class="mr-2">Descripcion:</span>
+                    </th>
+                    <td>
+                        <input input [(ngModel)]="permiso.descripcion" name="descripcion"
+                         class="mb-2 form-control form-control-sm descripcion-lg"
+                             type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th id="estado">
+                        <span class="mr-2">Estado:</span>
+                    </th>
+                    <td>
+                        <button id="sistreservacioncliente" (click)="habilitar()" 
+                        [ngClass]="(permiso.estado ? 
+                        'btn-habilitado': 'btn-deshabilitado')" class="mb-3">{{btn}}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="mt-1" />
+    </div>
+</div>

@@ -1,0 +1,427 @@
+.clientecontainer{
+    position: relative;
+    width: 100%;
+    height: 94.8vh;
+    overflow: hidden;
+  }
+  
+  .clientecontainer .clienteslider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 100%;
+    animation: animate 25s linear infinite ;
+  }
+  
+  .clientecontainer .clienteslider .clienteslide{
+    position: relative;
+    width: 20%;
+    height: 100%;
+    float: left;
+  
+  }
+
+  .clientecontainer .clienteslider .clienteslide .caption{
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    padding: 30px;
+    background: rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    transition: 0.5s;  
+  }
+  
+  .clientecontainer .clienteslider .clienteslide .caption h2{
+    margin: 0 0 20px;
+    padding: 0;
+    color: #ffffff;
+    font-size: 48px;
+     transition: 0.5s; 
+     font-weight: bold;
+     font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .clientecontainer .clienteslider .clienteslide .caption p{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 22px;
+    transition: 0.5s;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  
+  .clientecontainer .clienteslider .clienteslide.slide1{
+    background: url("../../../../assets/cliente/brisas2.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .clientecontainer .clienteslider .clienteslide.slide2{
+    background: url("../../../../assets/cliente/rest3.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .clientecontainer .clienteslider .clienteslide.slide3{
+    background: url("../../../../assets/cliente/rest2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .clientecontainer .clienteslider .clienteslide.slide4{
+    background: url("../../../../assets/cliente/fondo9.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  @keyframes animate{
+    0%{
+      left: 0;
+    }
+    20%{
+      left: 0;
+    }
+    25%{
+      left: -100%;
+    }
+    45%{
+      left: -100%;
+    }
+    50%{
+      left: -200%;
+    }
+    70%{
+      left: -200%;
+    }
+    75%{
+      left: -300%;
+    }
+    95%{
+      left: -300%;
+    }
+    100%{
+      left: -400%;
+    }
+  
+  }
+
+  @media (max-width: 768px){
+    .clientecontainer .clienteslider .clienteslide .caption{
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      box-sizing: border-box;
+      
+    }
+    
+    .clientecontainer .clienteslider .clienteslide .caption h2{
+      margin: 0 0 10px;
+      padding: 0;
+      color: #ffffff;
+      font-size: 30px;
+      
+    }
+    
+    .clientecontainer .clienteslider .clienteslide .caption p{
+      
+      
+      font-size: 18px;
+    }
+  }
+
+
+/*platos*/
+.boxdoctores{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  /* @media only screen and (max-width:1874px){
+    .boxdoctores{
+      margin-top: 200px;
+    }
+  }
+  @media only screen and (max-width:1124px){
+    .boxdoctores{
+      margin-top: 400px;
+    }
+  }
+  */
+  @media only screen and (max-width:800px){
+    .boxdoctores{
+      margin-top: 200px;
+    }
+
+    .hola{
+      margin-top: 200px;
+    }
+
+    .divacceder{
+      margin-top: 300px;
+    }
+  } 
+  
+  
+  .boxdocs{
+    width: 80%;
+  }
+  
+  .boxdocs h1{
+    text-transform: uppercase;
+    font-size: 3.5em;
+    text-align: center;
+    padding: 40px 20px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .boxdocs h2{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    padding: 40px 20px 10px;
+  }
+  
+  .boxdocs ul{
+    display: flex;
+    margin: 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .boxdocs ul li{
+    width: 280px;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 10px 35px -30px #000;
+    list-style: none outside none;
+  }
+  
+  .doctor{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .doctor img{
+    max-width: 100%;
+    -webkit-transition: all .5s ease-in-out;
+  }
+  
+  .doctor:hover img{
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.1);
+  }
+  
+  .doctor p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px;
+    margin: 0;
+    background-color: rgba(63, 63, 63, 0.7);
+    color: #ffffff;
+    width: 100%;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    -webkit-transition: all .5s ease-in-out;
+    text-transform: uppercase;
+    
+  }
+  
+  .doctor p span{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .doctor:hover p{
+    bottom: -80px;
+    opacity: 0;
+  }
+
+  .divacceder{
+      text-align: center;
+      background-color: white;
+  }
+
+  .acceder{
+    text-decoration: none;
+    background-color: #821625;
+    padding: 10px 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    
+    margin: 0 auto;
+    display: inline-block;
+    transition: all .3s ease;
+    border: 2px solid #821625;
+    border-radius: 10px;
+  }
+  
+  .acceder:hover{
+    background-color:#b9848c;
+    border: 2px solid #b9848c;
+  }
+
+  /*login*/
+
+.hola{
+    width: 100%;
+    /* height: 100%; */
+    text-align: center;
+    color: white;
+    /* background-image: url("../../../../assets/cliente/fondo4.jpg");  */
+    background-color:  #e1e1e1;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+.hola .container{
+   
+    padding-top: 150px;
+    padding-bottom: 20px;
+    background: white;
+    
+}
+
+
+
+.btn-login{
+    background-color: #821625;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.btn-login:hover{
+    background-color: 		#b9848c;
+}
+
+.btn-register{
+    background-color: #a44c54;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+}
+
+.btn-register:hover{
+    background-color: #821625;
+}
+.btn-recuperar{
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+}
+
+.not-user{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 8px;
+    border-color: #cc0000;
+    font-size: 13px;
+    color: #cc0000;
+}
+
+.btn-close{
+    background: transparent;
+    color: #cc0000;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btn-close:hover{
+    color: #ca3939;
+}
+
+
+
+footer.footer{
+    background-color:#821625;
+    margin-top: 150px;
+  }
+  
+  footer.footer .contenedor > div {
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  
+  @media only screen and (min-width:768px){
+    footer.footer .contenedor > div{
+      width: 33.3%;
+      float: left;
+    }
+  }
+  
+  footer.footer h3{
+      font-weight: bold;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  footer.footer h3 span{
+    color: 		#b9848c;
+  }
+  
+  footer.footer .ultimos-tweets li{
+    margin-bottom: 10px;
+  }
+  
+  footer.footer nav.redes-sociales{
+    float: right;
+    padding-right: 200px;
+  }
+  
+  p.copyright{
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+  }
+
+.error-404{
+    background-color: #19191a;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 1px;
+    height: 100%;
+}

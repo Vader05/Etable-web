@@ -1,0 +1,20 @@
+.btn-componer{
+    background-color: rgb(19, 21, 87);
+    border: 0px;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btn-no-componer{
+    background-color: rgb(138, 138, 138);
+    border: 0px;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btn-none{
+    background: transparent;
+    border: 0px;
+}

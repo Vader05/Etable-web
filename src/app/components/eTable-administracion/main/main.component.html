@@ -1,0 +1,29 @@
+<div *ngIf="!cliente" class="m-3">
+    <div *ngIf="load" class="div-loading" style="position:absolute"><img alt="loading" class="loading" src="{{loading}}" /></div>
+    <h3 *ngIf="!load">Bienvenido, {{user.usnombres}}</h3>
+    <hr />
+    <span class="mb-3">Sistema de Reservación de Mesas</span>
+    <p class="f-13">Verisón 1.0.0</p>
+</div>
+
+<div *ngIf="cliente" class="masthead">
+  <div class="clientecontainer">
+    <div class="clienteslider">
+      <div class="clienteslide slide1">
+        <div class="container">
+          <div class="intro-text">
+            <div class="intro-heading text-uppercase">{{configuracion.empnombre}}</div>
+            <div class="intro-lead-in">{{configuracion.empdescripcion}}</div>
+            <div class="img">
+              <img class="logo" src="../../../../assets/cliente/logo.png" alt="logo">
+            </div>
+            <div class="caption">
+              <p>Sistema de Gestón de reserva de mesas "E-Table" que permitirá al usuario obtener una reservación de mesa en el restaurante “Brisas del mar” según ciertas especificaciones que el usuario mismo podrá establecer, como es la fecha, horario, cantidad de personas que participarán de la mesa, y algún comentario sobre el tipo de mesa que desea.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

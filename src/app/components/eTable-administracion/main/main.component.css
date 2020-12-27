@@ -1,0 +1,155 @@
+div.masthead {
+    /* text-align: center;
+    color: white;
+    background-image: url("../../../../assets/cliente/fondo6.jpg"); 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 94.8vh; */
+  }
+
+  div.masthead .intro-text {
+    
+    padding: 100px!important;
+    
+  }
+  
+  div.masthead .intro-text .intro-lead-in {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 25px;
+ }
+  
+  div.masthead .intro-text .intro-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  .img .logo{
+   margin-left: 200px;
+  }
+  
+.clientecontainer{
+  position: relative;
+  width: 100%;
+  height: 94.8vh;
+  overflow: hidden;
+}
+
+.clientecontainer .clienteslider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500%;
+  height: 100%;
+  /* animation: animate 20s linear infinite ; */
+}
+
+.clientecontainer .clienteslider .clienteslide{
+  position: relative;
+  width: 20%;
+  height: 100%;
+  float: left;
+
+}
+
+.clientecontainer .clienteslider .clienteslide .caption{
+  position: absolute;
+  bottom: 200px;
+  left: 500px;
+  right: 500px;
+  padding: 30px;
+  background: rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  transition: 0.5s;  
+}
+
+.clientecontainer .clienteslider .clienteslide .caption p{
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 22px;
+  transition: 0.5s;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+}
+
+
+.clientecontainer .clienteslider .clienteslide.slide1{
+  background: url("../../../../assets/cliente/sistema1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.clientecontainer .clienteslider .clienteslide.slide2{
+  background: url("../../../../assets/cliente/fondo7.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.clientecontainer .clienteslider .clienteslide.slide3{
+  background: url("../../../../assets/cliente/fondo4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.clientecontainer .clienteslider .clienteslide.slide4{
+  background: url("../../../../assets/cliente/fondo3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 
+@keyframes animate{
+  0%{
+    left: 0;
+  }
+  20%{
+    left: 0;
+  }
+  25%{
+    left: -100%;
+  }
+  45%{
+    left: -100%;
+  }
+  50%{
+    left: -200%;
+  }
+  70%{
+    left: -200%;
+  }
+  75%{
+    left: -300%;
+  }
+  95%{
+    left: -300%;
+  }
+  100%{
+    left: -400%;
+  }
+
+} */
+
+  .logo{
+    width: 500px;
+  }
+
+  @media (min-width: 768px) {
+    div.masthead .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+    }
+    div.masthead .intro-text .intro-lead-in {
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 25px;
+ }
+    div.masthead .intro-text .intro-heading {
+      font-size: 75px;
+      font-weight: 700;
+      line-height: 75px;
+      margin-bottom: 50px;
+  }
+  }
